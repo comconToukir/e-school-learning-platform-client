@@ -10,6 +10,7 @@ import ErrorPage from "./errorPage/errorPage.component";
 import EmailNotVerified from './EmailNotVerified/EmailNotVerified';
 import Checkout from "./private-routes/checkout/checkout.component";
 import PrivateRoute from "./private-routes/private-route.component";
+import ResetPassword from "./reset-password/reset-password.component";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -22,6 +23,7 @@ const router = createBrowserRouter(
       <Route path="/blog" element={<Blog />} />
       <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
       <Route path="/verify-email" element={<EmailNotVerified />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/*" element={<ErrorPage />} />
     </Route>
   )

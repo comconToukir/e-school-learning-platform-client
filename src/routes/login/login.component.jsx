@@ -4,7 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { signInAuthUserWithEmailAndPassword } from "../../utils/firebase.utils";
 import { toast } from "react-hot-toast";
 import AuthProviders from "../../components/auth-providers/auth-providers.component";
-import { useContext } from 'react';
+import { useContext, useState } from "react";
 import { UserContext } from "../../contexts/user.context";
 
 const Login = () => {
@@ -77,10 +77,13 @@ const Login = () => {
           />
         </div>
       </form>
-      <p className="text-center mt-3">
+      <p className="mt-5 flex items-end">
         Don't have an account?{" "}
-        <Link className="link" to="/sign-up">
+        <Link className="link ml-1" to="/sign-up">
           Login
+        </Link>
+        <Link to="/reset-password" className="link ml-auto text-sm">
+          Forgot password?
         </Link>
       </p>
       <div className="mt-7">

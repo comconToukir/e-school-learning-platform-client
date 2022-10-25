@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  sendPasswordResetEmail
 } from 'firebase/auth';
 
 import app from '../firebase.config';
@@ -17,8 +18,8 @@ const googleProvider = new GoogleAuthProvider();
 export const auth = getAuth(app);
 
 export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
-.then(result => {})
-.catch(error => console.error(error))
+  .then(result => { })
+  .catch(error => console.error(error))
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
@@ -38,8 +39,12 @@ export const updateUserProfile = (profile) => {
   return updateProfile(auth.currentUser, profile);
 };
 
-export  const verifyEmail = () => {
-  return sendEmailVerification(auth.currentUser)
+export const verifyEmail = () => {
+  return sendEmailVerification(auth.currentUser);
+}
+
+export const resetPassword = (email) => {
+  return sendPasswordResetEmail(auth, email);
 }
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
