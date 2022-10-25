@@ -18,13 +18,13 @@ const EmailNotVerified = () => {
   };
 
   return (
-    <div>
-      <p>
+    <div className="bg-slate-900 mt-8 p-8 rounded-md">
+      <p className="mb-8">
         Your email is not verified. Please verify your email address first
-        before proceeding.
+        before continuing.
       </p>
-      <button onClick={handleEmailVerification}>Send Verification email</button>
-      <button onClick={() => navigate(-1)}>Go back</button>
+      <button className="btn btn-accent mr-3" onClick={handleEmailVerification}>Send Verification email</button>
+      <button className="btn  btn-outline" onClick={() => navigate('/')}>Go to Home page</button>
     </div>
   );
 };

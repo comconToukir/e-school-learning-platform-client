@@ -3,9 +3,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { createAuthUserWithEmailAndPassword, updateUserProfile } from "../../utils/firebase.utils";
 import { toast } from 'react-hot-toast';
+import AuthProviders from "../../components/auth-providers/auth-providers.component";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/user.context";
 
 const SignUp = () => {
   const navigate = useNavigate();
+  const { setLoading } = useContext(UserContext);
 
   const {
     register,
@@ -27,6 +31,9 @@ const SignUp = () => {
     const photoURL = data.photoURL;
     const email = data.email;
     const password = data.password;
+
+    setLoading(true);
+    
     createAuthUserWithEmailAndPassword(email, password)
     .then(result => {
       handleUpdateProfile({ displayName, photoURL });
@@ -47,7 +54,7 @@ const SignUp = () => {
           <input
             type="text"
             placeholder="Your full name"
-            className="input input-bordered w-full max-w-md"
+            className="input input-bordered w-full max-w-md h-9"
             {...register("name", {
               required: true,
               maxLength: 30,
@@ -71,7 +78,7 @@ const SignUp = () => {
           <input
             type="text"
             placeholder="Your photo url"
-            className="input input-bordered w-full max-w-md"
+            className="input input-bordered w-full max-w-md h-9"
             {...register("photoURL", {
               required: false
             })}
@@ -82,7 +89,7 @@ const SignUp = () => {
           <input
             type="email"
             placeholder="Your email address"
-            className="input input-bordered w-full max-w-md"
+            className="input input-bordered w-full max-w-md h-9"
             {...register("email", {
               required: true,
               pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -100,7 +107,7 @@ const SignUp = () => {
           <input
             type="password"
             placeholder="Your password"
-            className="input input-bordered w-full max-w-md"
+            className="input input-bordered w-full max-w-md h-9 rounded-sm"
             {...register("password", {
               required: true,
               pattern:
@@ -118,7 +125,7 @@ const SignUp = () => {
             </p>
           )}
           <input
-            className="bg-purple-700 py-3 mt-4 rounded-md cursor-pointer"
+            className="bg-purple-700 py-3 mt-7 rounded-md cursor-pointer"
             type="submit"
             value="Submit"
             aria-label="submit"
@@ -131,6 +138,10 @@ const SignUp = () => {
           Login
         </Link>
       </p>
+      <div className="mt-7">
+        <h6 className="text-center">You can also sign up with</h6>
+      <AuthProviders />
+      </div>
     </div>
   );
 };

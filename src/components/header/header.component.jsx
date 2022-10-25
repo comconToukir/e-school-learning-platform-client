@@ -2,19 +2,31 @@ import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
 
-import Logo from '../../assets/logo/e-school-logo.jpg'
+import { signOutUser } from "../../utils/firebase.utils";
+import Logo from "../../assets/logo/e-school-logo.jpg";
 
 import "./header.styles.css";
 
 const Header = () => {
-  const { user } = useContext(UserContext);
+  const { user, setLoading } = useContext(UserContext);
+
+  const userLogOut = () => {
+    setLoading(true);
+    signOutUser();
+  };
 
   return (
     <nav className=" bg-slate-900">
       <div className="navbar max-w-screen-xl mx-auto">
         <div className="flex-1">
-          <img className="h-11 mr-3 rounded-md" src={Logo} alt="e-school-logo" />
-          <span className="normal-case text-xl">E-SCHOOL</span>
+          <Link to="/" className="flex items-center">
+            <img
+              className="h-11 mr-3 rounded-md"
+              src={Logo}
+              alt="e-school-logo"
+            />
+            <span className="normal-case text-xl">E-SCHOOL</span>
+          </Link>
         </div>
         <div className="flex-none gap-2">
           <div className="form-control">
@@ -107,7 +119,11 @@ const Header = () => {
         <div className="navbar-end">
           {user ? (
             <div className="dropdown dropdown-end">
-              <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <label
+                tabIndex={0}
+                className="btn btn-ghost btn-circle avatar tooltip tooltip-left hover:bg-transparent"
+                data-tip={user.displayName}
+              >
                 <div className="w-10 rounded-full">
                   <img src={user.photoURL} alt="" />
                 </div>
@@ -117,16 +133,13 @@ const Header = () => {
                 className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-slate-900 rounded-box w-52"
               >
                 <li>
-                  <span className="justify-between">
-                    Profile
-                    <span className="badge">New</span>
-                  </span>
+                  <span className="justify-between">Profile</span>
                 </li>
                 <li>
-                  <a>Settings</a>
+                  <span>Settings</span>
                 </li>
                 <li>
-                  <a>Logout</a>
+                  <span onClick={userLogOut}>Logout</span>
                 </li>
               </ul>
             </div>

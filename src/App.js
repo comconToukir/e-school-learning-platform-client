@@ -11,16 +11,17 @@ import router from './routes/routes';
 import './App.css';
 
 function App() {
-  const { setUser } = useContext(UserContext);
+  const { setUser, setLoading } = useContext(UserContext);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChangedListener((user) => {
+      setLoading(false);
       setUser(user);
       console.log(user);
     })
 
     return unsubscribe;
-  }, [setUser])
+  }, [setUser, setLoading])
   
   return (
     <>

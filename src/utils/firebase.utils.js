@@ -16,7 +16,9 @@ const googleProvider = new GoogleAuthProvider();
 
 export const auth = getAuth(app);
 
-export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
+.then(result => {})
+.catch(error => console.error(error))
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;
@@ -37,7 +39,7 @@ export const updateUserProfile = (profile) => {
 };
 
 export  const verifyEmail = () => {
-  sendEmailVerification(auth.currentUser);
+  return sendEmailVerification(auth.currentUser)
 }
 
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
