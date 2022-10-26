@@ -1,0 +1,3 @@
+.drawer-mobile {
+  min-height: calc(100vh - 288px);
+}

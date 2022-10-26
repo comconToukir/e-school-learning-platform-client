@@ -1,0 +1,3 @@
+.card-image-holder::before {
+  opacity: 0.20!important;
+}
