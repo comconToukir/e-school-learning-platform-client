@@ -11,6 +11,7 @@ import EmailNotVerified from './EmailNotVerified/EmailNotVerified';
 import Checkout from "./private-routes/checkout/checkout.component";
 import PrivateRoute from "./private-routes/private-route.component";
 import ResetPassword from "./reset-password/reset-password.component";
+import CoursesContainer from "../components/courses-container/courses-container.component";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +19,9 @@ const router = createBrowserRouter(
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
       <Route path="/sign-up" element={<SignUp />} />
-      <Route path="/courses" element={<Courses />} />
+      <Route path="/courses" element={<Courses />}>
+        <Route path="/courses/:id" element={<CoursesContainer />} />
+      </Route>
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/blog" element={<Blog />} />
       <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
