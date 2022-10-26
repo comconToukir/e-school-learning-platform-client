@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from 'react-hot-toast';
 
 import { createAuthUserWithEmailAndPassword, updateUserProfile } from "../../utils/firebase.utils";
-import { toast } from 'react-hot-toast';
 import AuthProviders from "../../components/auth-providers/auth-providers.component";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
@@ -45,7 +45,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="mt-20 px-4 py-6 bg-slate-900 max-w-md mx-auto rounded-md">
+    <div className="mt-20 px-4 py-6 bg-base-200 max-w-md mx-auto rounded-md">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label className="label">

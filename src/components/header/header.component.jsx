@@ -16,8 +16,8 @@ const Header = () => {
   };
 
   return (
-    <nav className=" bg-slate-900">
-      <div className="navbar max-w-screen-xl mx-auto">
+    <nav className="bg-base-300">
+      <div className="navbar max-w-screen-xl mx-auto pt-5">
         <div className="flex-1">
           <Link to="/" className="flex items-center">
             <img
@@ -40,7 +40,7 @@ const Header = () => {
       </div>
       <div className="navbar max-w-screen-xl mx-auto">
         <div className="navbar-start lg:hidden">
-          <div className="dropdown bg-slate-900">
+          <div className="dropdown bg-base-300">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -59,7 +59,7 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-slate-900 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52"
             >
               <li>
                 <NavLink
@@ -130,10 +130,10 @@ const Header = () => {
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-slate-900 rounded-box w-52"
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-300 rounded-box w-52"
               >
                 <li>
-                  <span className="justify-between">Profile</span>
+                  <Link to="/profile">Profile</Link>
                 </li>
                 <li>
                   <span>Settings</span>

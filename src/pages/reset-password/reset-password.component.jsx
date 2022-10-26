@@ -28,7 +28,7 @@ const ResetPassword = () => {
   };
 
   return (
-    <div className="bg-slate-900  mt-8 p-8 rounded-md text-center">
+    <div className="bg-base-200  mt-8 p-8 rounded-md text-center">
       <h2 className="text-5xl font-semibold mb-5">Oops!</h2>
       <p className="mb-4">It seems that you have forgotten your password.</p>
       <form onSubmit={handleSubmit(onSubmit)}>

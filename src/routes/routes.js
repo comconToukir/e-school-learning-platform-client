@@ -13,6 +13,7 @@ import Checkout from './private-routes/checkout/checkout.component';
 import EmailNotVerified from './../pages/EmailNotVerified/EmailNotVerified';
 import ErrorPage from "../pages/errorPage/errorPage.component";
 import CourseDetail from './../components/course-detail/course-detail.component';
+import Profile from "../pages/profile/profile.component";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -27,6 +28,7 @@ const router = createBrowserRouter(
       </Route>
       <Route path="/faq" element={<FaqPage />} />
       <Route path="/blog" element={<Blog />} />
+      <Route path="/profile" element={<PrivateRoute><Profile /></PrivateRoute>} />
       <Route path="/checkout" element={<PrivateRoute><Checkout /></PrivateRoute>} />
       <Route path="/verify-email" element={<EmailNotVerified />} />
       <Route path="/reset-password" element={<ResetPassword />} />

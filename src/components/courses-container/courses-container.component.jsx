@@ -34,7 +34,7 @@ const CoursesContainer = () => {
   }
 
   return (
-    <div className="py-3 pl-0  lg:pl-3 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="p-3 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {
         courses.map(crs => <CourseCard key={crs.id} courseData={crs} />)
       }

@@ -8,6 +8,8 @@ import {
   signInWithPopup,
   signOut,
   updateProfile,
+  updateEmail,
+  updatePassword,
   sendPasswordResetEmail
 } from 'firebase/auth';
 
@@ -38,6 +40,14 @@ export const signOutUser = async () => signOut(auth);
 export const updateUserProfile = (profile) => {
   return updateProfile(auth.currentUser, profile);
 };
+
+export const updateUserEmail = (email) => {
+  return updateEmail(auth.currentUser, email);
+};
+
+export const updateUserPassword = (password) => {
+  return updatePassword(auth.currentUser, password);
+}
 
 export const verifyEmail = () => {
   return sendEmailVerification(auth.currentUser);

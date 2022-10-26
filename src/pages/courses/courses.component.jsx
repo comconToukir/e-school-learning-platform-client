@@ -19,7 +19,7 @@ const Courses = () => {
   const categories = data.data;
 
   return (
-    <div className="bg-slate-900 mt-8 rounded-md p-4">
+    <div className="bg-base-200 mt-8 rounded-md">
       <div className="w-full navbar bg-base-300 rounded-t-md">
         <div className="flex-none lg:hidden">
           <label htmlFor="my-drawer-2" className="btn btn-square btn-ghost">
@@ -48,7 +48,7 @@ const Courses = () => {
         </div>
         <div className="drawer-side sticky top-0">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
+          <ul className="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content">
             {/* <!-- Sidebar content here --> */}
             {categories.map((cat) => (
               <li key={cat.id}>

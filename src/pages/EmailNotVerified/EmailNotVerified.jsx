@@ -14,11 +14,16 @@ const EmailNotVerified = () => {
       .then(() => {
         toast.success('Verification email has been sent. Please check your email address')
       })
-      .catch((error) => console.error(error));
+      .catch((error) => {
+        if (error.message === `can't access property "getIdToken", user is null`) {
+          toast.error("you are not logged in. Please log in first");
+        }
+        console.error(error)
+      });
   };
 
   return (
-    <div className="bg-slate-900 mt-8 p-8 rounded-md">
+    <div className="bg-base-200 mt-8 mb-80 p-8 rounded-md">
       <p className="mb-8">
         Your email is not verified. Please verify your email address first
         before continuing.
