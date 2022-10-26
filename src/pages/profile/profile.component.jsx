@@ -105,7 +105,7 @@ const Profile = () => {
               <p className="text-red-500">Alphabetical characters only</p>
             )}
             <input
-              className="bg-purple-700 py-3 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="bg-purple-700 py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update name"
               aria-label="submit"
@@ -126,7 +126,7 @@ const Profile = () => {
               required
             />
             <input
-              className="bg-purple-700 py-3 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="bg-purple-700 py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update photo url"
               aria-label="submit"
@@ -154,7 +154,7 @@ const Profile = () => {
               </p>
             )}
             <input
-              className="bg-purple-700 py-3 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="bg-purple-700 py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update email address"
               aria-label="submit"
@@ -185,7 +185,7 @@ const Profile = () => {
               </p>
             )}
             <input
-              className="bg-purple-700 py-3 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="bg-purple-700 py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update password"
               aria-label="submit"
