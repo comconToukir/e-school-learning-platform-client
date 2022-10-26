@@ -1,20 +1,16 @@
 import React from "react";
 import { useContext } from "react";
-import { InfinitySpin } from "react-loader-spinner";
 import { Navigate, useLocation } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
+import Spinner from "../../components/spinner/spinner.component";
 
 const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(UserContext);
   const location = useLocation();
 
   if (loading) {
-    return (
-      <InfinitySpin width="200" color="#4fa94d">
-        <span className="invisible ">Loading...</span>
-      </InfinitySpin>
-    );
+    return <Spinner />
   }
 
   if (user && !user.emailVerified) {

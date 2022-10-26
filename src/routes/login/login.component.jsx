@@ -43,7 +43,7 @@ const Login = () => {
           <input
             type="email"
             placeholder="Your email address"
-            className="input input-bordered w-full max-w-md h-9"
+            className="input input-bordered w-full max-w-md h-9 rounded-sm"
             {...register("email", {
               required: true,
               pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
@@ -72,7 +72,7 @@ const Login = () => {
           <input
             className="bg-purple-700 py-3 mt-7 rounded-md cursor-pointer"
             type="submit"
-            value="Submit"
+            value="Login"
             aria-label="submit"
           />
         </div>

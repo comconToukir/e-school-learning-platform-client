@@ -1,5 +1,10 @@
+.menu a {
+  padding: 12px 18px;
+  border-radius: 5px;
+}
+
 .active {
-  background: none;
-  color: blueviolet;
+  background: none!important;
+  color: blueviolet!important;
   font-weight: 600;
 }

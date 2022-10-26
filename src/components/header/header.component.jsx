@@ -33,7 +33,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered h-9"
+              className="input input-bordered h-9 rounded-sm"
             />
           </div>
         </div>
@@ -88,8 +88,8 @@ const Header = () => {
             </ul>
           </div>
         </div>
-        <div className="navbar-start hidden lg:flex ">
-          <ul className="menu menu-horizontal p-0">
+        <div className="navbar-start hidden lg:flex">
+          <ul className="menu menu-horizontal p-0 gap-3">
             <li>
               <NavLink
                 to="/courses"
@@ -144,7 +144,7 @@ const Header = () => {
               </ul>
             </div>
           ) : (
-            <ul className="menu menu-horizontal p-0">
+            <ul className="menu menu-horizontal p-0 gap-3">
               <li>
                 <NavLink to="/login">Login</NavLink>
               </li>

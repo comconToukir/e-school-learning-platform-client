@@ -1,9 +1,12 @@
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 import { resetPassword } from '../../utils/firebase.utils';
 
 const ResetPassword = () => {
+  const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
@@ -15,7 +18,8 @@ const ResetPassword = () => {
     const email = data.email;
     resetPassword(email)
       .then((result) => {
-        toast.success("A password reset email has been sent to your email address.")
+        toast.success("A password reset email has been sent to your email address.");
+        navigate(-1);
       })
       .catch((error) => {
         toast.error(error.code);
@@ -32,7 +36,7 @@ const ResetPassword = () => {
           <input
             type="email"
             placeholder="Your email address"
-            className="input input-bordered w-full max-w-md h-9 mx-auto mb-4"
+            className="input input-bordered w-full max-w-md h-9 mx-auto mb-4 rounded-sm"
             {...register("email", {
               required: true,
               pattern: /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
