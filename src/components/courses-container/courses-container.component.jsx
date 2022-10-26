@@ -4,6 +4,7 @@ import axios from "axios";
 
 import Spinner from "../spinner/spinner.component";
 import CourseCard from "../course-card/course-card.component";
+import ErrorPage from "../../pages/errorPage/errorPage.component";
 
 const CoursesContainer = () => {
   const { categoryId } = useParams();
@@ -21,6 +22,9 @@ const CoursesContainer = () => {
 
   if (isLoading) return <Spinner />;
 
+  if (isError) return <ErrorPage />
+
+
   const courses = data.data;
 
   if (courses.length === 0) {
@@ -30,9 +34,9 @@ const CoursesContainer = () => {
   }
 
   return (
-    <div className="py-3 pl-3 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="py-3 pl-0  lg:pl-3 grid gap-3 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {
-        courses.map(crs => <CourseCard courseData={crs} />)
+        courses.map(crs => <CourseCard key={crs.id} courseData={crs} />)
       }
     </div>
   );

@@ -11,10 +11,10 @@ const Courses = () => {
   const { isLoading, data, isError } = useQuery("categories", () => {
     return axios.get(`http://localhost:5001/`);
   });
-
-  if (isError) return <ErrorPage />;
-
+  
   if (isLoading) return <Spinner />;
+  
+  if (isError) return <ErrorPage />;
 
   const categories = data.data;
 
@@ -46,7 +46,7 @@ const Courses = () => {
           {/* <!-- Page content here --> */}
           <Outlet />
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side sticky top-0">
           <label htmlFor="my-drawer-2" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
             {/* <!-- Sidebar content here --> */}
