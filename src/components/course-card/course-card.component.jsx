@@ -13,7 +13,7 @@ const CourseCard = ({
     categoryId = "6s5df5sdsm";
   }
   return (
-    <div className="card bg-base-100 shadow-lg rounded-md">
+    <div className="card bg-base-100 shadow-sm rounded-md">
       <div className="card image-full card-image-holder h-60 md:h-48 rounded-none">
         <figure>
           <img

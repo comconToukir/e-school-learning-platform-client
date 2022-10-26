@@ -9,7 +9,7 @@ import "./courses.styles.css";
 
 const Courses = () => {
   const { isLoading, data, isError } = useQuery("categories", () => {
-    return axios.get(`http://localhost:5001/`);
+    return axios.get(`https://learning-platform-server-side-eosin.vercel.app/`);
   });
   
   if (isLoading) return <Spinner />;
@@ -19,8 +19,8 @@ const Courses = () => {
   const categories = data.data;
 
   return (
-    <div className="bg-base-200 mt-8 rounded-md">
-      <div className="w-full navbar bg-base-300 rounded-t-md">
+    <div className="bg-base-200 mt-8 rounded-md shadow-sm">
+      <div className="w-full navbar bg-base-300 rounded-t-md shadow-sm">
         <div className="flex-none lg:hidden">
           <label htmlFor="my-drawer-2" className="btn btn-square btn-ghost">
             <svg

@@ -2,7 +2,7 @@ import Logo from "../../assets/logo/e-school-logo.jpg"
 
 const Footer = () => {
   return (
-    <div className="bg-base-300 mt-12">
+    <div className="bg-base-300 mt-12 shadow-sm">
       <footer className="footer p-10 text-base-content max-w-screen-xl mx-auto">
         <div>
           <span className="footer-title">Services</span>

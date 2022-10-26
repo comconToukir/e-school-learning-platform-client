@@ -45,7 +45,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="mt-20 px-4 py-6 bg-base-200 max-w-md mx-auto rounded-md">
+    <div className="mt-20 px-4 py-6 bg-base-200 max-w-md mx-auto rounded-md shadow-sm">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="form-control">
           <label className="label">
@@ -125,7 +125,7 @@ const SignUp = () => {
             </p>
           )}
           <input
-            className="bg-purple-700 py-3 mt-7 rounded-md cursor-pointer"
+            className="bg-accent py-3 mt-7 rounded-md cursor-pointer"
             type="submit"
             value="Sign up"
             aria-label="submit"

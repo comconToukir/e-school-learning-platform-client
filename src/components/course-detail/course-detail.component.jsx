@@ -1,8 +1,10 @@
+import React from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "react-query";
+import ReactToPdf from "react-to-pdf";
 import { PieChart } from "react-minimal-pie-chart";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaPrint } from "react-icons/fa";
 
 import Spinner from "../spinner/spinner.component";
 import ErrorPage from "./../../pages/errorPage/errorPage.component";
@@ -10,9 +12,12 @@ import Rating from "../rating/rating.component";
 
 const CourseDetail = () => {
   const { categoryId, courseId } = useParams();
+  const ref = React.createRef();
 
   const { isLoading, data, isError } = useQuery(courseId, () => {
-    return axios.get(`http://localhost:5001/courses/${categoryId}/${courseId}`);
+    return axios.get(
+      `https://learning-platform-server-side-eosin.vercel.app/courses/${categoryId}/${courseId}`
+    );
   });
 
   if (isLoading) return <Spinner />;
@@ -27,11 +32,14 @@ const CourseDetail = () => {
     { title: "Others", value: 100 - acceptance, color: "#C13C37" },
   ];
 
-  console.log(acceptance);
-
   return (
-    <div className="p-3 min-h-full">
-      <h2 className="text-4xl font-semibold mb-7">{course_name}</h2>
+    <div className="p-3 pt-5 min-h-full" ref={ref}>
+      <div className="flex justify-between">
+        <h2 className="text-4xl font-semibold mb-7">{course_name}</h2>
+        <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+          {({ toPdf }) => <button onClick={toPdf} className="btn py-1 mb-4 ml-auto text-xs"><FaPrint className="mr-2" />Generate pdf</button>}
+        </ReactToPdf>
+      </div>
       <div className="grid grid-cols-1 md:grid-cols-2 mb-5">
         <div>
           <img src={image_url} className="h-64 w-full object-cover" alt="" />
@@ -60,7 +68,7 @@ const CourseDetail = () => {
           </div>
         </div>
       </div>
-        <p className="mb-7">{description}</p>
+      <p className="mb-7">{description}</p>
       <div className="text-end">
         <Link to="/checkout" className="btn btn-primary">
           <FaStar className="mr-2" />

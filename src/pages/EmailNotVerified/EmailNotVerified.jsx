@@ -23,7 +23,7 @@ const EmailNotVerified = () => {
   };
 
   return (
-    <div className="bg-base-200 mt-8 mb-80 p-8 rounded-md">
+    <div className="bg-base-200 mt-8 mb-80 p-8 rounded-md  shadow-sm">
       <p className="mb-8">
         Your email is not verified. Please verify your email address first
         before continuing.

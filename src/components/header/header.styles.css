@@ -3,8 +3,13 @@
   border-radius: 5px;
 }
 
+.menu a:hover {
+  border-radius: 8px!Important;
+}
+
 .active {
-  background: none!important;
+  /* background: none!important;
   color: #641ae6!important;
-  font-weight: 600;
+  font-weight: 600; */
+  border-radius: 8px!important;
 }

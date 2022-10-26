@@ -17,7 +17,7 @@ const CoursesContainer = () => {
     id = categoryId;
   }
   const { isLoading, data, isError } = useQuery(id, () => {
-    return axios.get(`http://localhost:5001/courses/${id}`);
+    return axios.get(`https://learning-platform-server-side-eosin.vercel.app/courses/${id}`);
   });
 
   if (isLoading) return <Spinner />;
