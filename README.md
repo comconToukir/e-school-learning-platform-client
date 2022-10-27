@@ -56,6 +56,8 @@ It as an online learning platform dedicated to educate people of this world. Thi
 - react-minimal-pie-chart
 - react-to-pdf (Generate pdf from react element and download)
 
+
+#### Live Site Link: [https://learning-platform-e-school.web.app/](https://learning-platform-e-school.web.app/) 
 > #### Additional
 
 - Clone the project. Go to project directory.
