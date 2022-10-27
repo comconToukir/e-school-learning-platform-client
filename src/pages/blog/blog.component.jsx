@@ -24,6 +24,7 @@ const blogData = [
   services, and it leverages industry standards like OAuth 2.0 and
   OpenID Connect, so it can be easily integrated with your custom
   backend.`,
+    p2: `Some alternatives to firebase authentication are Supabase, Okta, Auth0, OneLogin, Ory etc.`
   },
   {
     id: `mghjhgj`,
