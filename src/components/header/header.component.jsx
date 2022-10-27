@@ -1,7 +1,8 @@
 import React, { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { UserContext } from "../../contexts/user.context";
 
+import { UserContext } from "../../contexts/user.context";
+import { ThemeContext } from "../../contexts/theme.context";
 import { signOutUser } from "../../utils/firebase.utils";
 import Logo from "../../assets/logo/e-school-logo.jpg";
 
@@ -9,11 +10,20 @@ import "./header.styles.css";
 
 const Header = () => {
   const { user, setLoading } = useContext(UserContext);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const userLogOut = () => {
     setLoading(true);
     signOutUser();
   };
+
+  const toggleTheme = () => {
+    if (theme === "cupcake") {
+      setTheme("black");
+    } else if (theme === "black") {
+      setTheme("cupcake");
+    }
+  }
 
   return (
     <nav className="bg-base-300 shadow-sm">
@@ -37,7 +47,7 @@ const Header = () => {
             />
           </div>
           <label className="swap swap-rotate">
-            <input type="checkbox" aria-label="toggle-theme" />
+            <input type="checkbox" aria-label="toggle-theme" onChange={toggleTheme} />
 
             <svg
               className="swap-on fill-current w-8 h-8"

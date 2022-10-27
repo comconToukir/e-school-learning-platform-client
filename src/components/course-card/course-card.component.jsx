@@ -13,7 +13,7 @@ const CourseCard = ({
     categoryId = "6s5df5sdsm";
   }
   return (
-    <div className="card bg-base-100 shadow-sm rounded-md">
+    <div className="card bg-base-300 shadow-sm rounded-md">
       <div className="card image-full card-image-holder h-60 md:h-48 rounded-none">
         <figure>
           <img
@@ -30,11 +30,15 @@ const CourseCard = ({
         <h2 className="card-title">{course_name}</h2>
         <p className="text-sm">{description.slice(0, 90)}...</p>
         <div className="flex justify-between mt-3">
-
-        <Link to={`/courses/${categoryId}/${id}`} className="btn btn-primary w-70 rounded-md">
-          View Details
-        </Link>
-        <Link to="/checkout" className="btn btn-primary w-10 px-0 rounded-md"><FaCartPlus /></Link>
+          <Link
+            to={`/courses/${categoryId}/${id}`}
+            className="btn btn-primary w-70 rounded-md"
+          >
+            <button>View Details</button>
+          </Link>
+          <Link to="/checkout" className="btn btn-primary w-10 px-0 rounded-md">
+            <FaCartPlus />
+          </Link>
         </div>
       </div>
     </div>

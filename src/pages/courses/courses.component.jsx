@@ -16,6 +16,8 @@ const Courses = () => {
   
   if (isError) return <ErrorPage />;
 
+  if (!data.data) return <ErrorPage />;
+
   const categories = data.data;
 
   return (

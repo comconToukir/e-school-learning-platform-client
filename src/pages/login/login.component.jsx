@@ -81,7 +81,7 @@ const Login = () => {
       <p className="mt-5 flex items-end">
         Don't have an account?{" "}
         <Link className="link ml-1" to="/sign-up">
-          Login
+          register
         </Link>
         <Link to="/reset-password" className="link ml-auto text-sm">
           Forgot password?

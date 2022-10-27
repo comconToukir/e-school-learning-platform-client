@@ -24,7 +24,6 @@ const CoursesContainer = () => {
 
   if (isError) return <ErrorPage />
 
-
   const courses = data.data;
 
   if (courses.length === 0) {

@@ -24,6 +24,8 @@ const CourseDetail = () => {
 
   if (isError) return <ErrorPage />;
 
+  if (!data.data) return <ErrorPage />;
+
   const { image_url, course_name, acceptance, price, description, reviews } =
     data.data;
 
@@ -37,7 +39,12 @@ const CourseDetail = () => {
       <div className="flex justify-between">
         <h2 className="text-4xl font-semibold mb-7">{course_name}</h2>
         <ReactToPdf targetRef={ref} filename="div-blue.pdf">
-          {({ toPdf }) => <button onClick={toPdf} className="btn py-1 mb-4 ml-auto text-xs"><FaPrint className="mr-2" />Generate pdf</button>}
+          {({ toPdf }) => (
+            <button onClick={toPdf} className="btn py-1 mb-4 ml-auto text-xs rounded-md">
+              <FaPrint className="mr-2" />
+              Generate pdf
+            </button>
+          )}
         </ReactToPdf>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 mb-5">
@@ -70,9 +77,11 @@ const CourseDetail = () => {
       </div>
       <p className="mb-7">{description}</p>
       <div className="text-end">
-        <Link to="/checkout" className="btn btn-primary">
-          <FaStar className="mr-2" />
-          Get premium access
+        <Link to="/checkout">
+          <button className="btn btn-primary rounded-md">
+            <FaStar className="mr-2" />
+            Get premium access
+          </button>
         </Link>
       </div>
     </div>
