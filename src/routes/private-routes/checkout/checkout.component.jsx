@@ -6,7 +6,11 @@ import Spinner from "../../../components/spinner/spinner.component";
 import ErrorPage from "../../../pages/errorPage/errorPage.component";
 
 const Checkout = () => {
-  const { state: { from: { categoryId, courseId }}} = useLocation();
+  const location = useLocation();
+  console.log(location);
+  console.log(location.state);
+
+  const { categoryId, courseId } = location.state;
   console.log(categoryId, courseId);
   
   const { isLoading, data, isError } = useQuery(courseId, () => {

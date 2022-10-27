@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useLocation } from "react-router-dom";
 import axios from "axios";
 import { useQuery } from "react-query";
 import ReactToPdf from "react-to-pdf";
@@ -12,6 +12,7 @@ import Rating from "../rating/rating.component";
 
 const CourseDetail = () => {
   const { categoryId, courseId } = useParams();
+  const location = useLocation();
   const ref = React.createRef();
 
   const { isLoading, data, isError } = useQuery(courseId, () => {
@@ -80,7 +81,7 @@ const CourseDetail = () => {
       </div>
       <p className="mb-7 font-light">{description}</p>
       <div className="text-end">
-        <Link to={`/checkout/${id}`} state={{ from: { categoryId, courseId }}}>
+        <Link to={`/checkout/${id}`} state={{ from: location, categoryId, courseId }}>
           <button className="btn btn-primary rounded-md capitalize">
             <FaStar className="mr-2" />
             Get premium access

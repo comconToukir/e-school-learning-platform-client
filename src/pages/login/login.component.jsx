@@ -10,9 +10,14 @@ import { UserContext } from "../../contexts/user.context";
 const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const { categoryId, courseId } = location.state.from.state;
   const { setLoading } = useContext(UserContext);
 
+  console.log(categoryId, courseId);
+
   const from = location.state?.from?.pathname || "/";
+  console.log(from);
 
   const {
     register,
@@ -27,7 +32,7 @@ const Login = () => {
     setLoading(true);
     signInAuthUserWithEmailAndPassword(email, password)
       .then((result) => {
-        navigate(from, { replace: true });
+        navigate(from, { state: { categoryId, courseId}});
       })
       .catch((error) => {
         toast.error(error.code)
