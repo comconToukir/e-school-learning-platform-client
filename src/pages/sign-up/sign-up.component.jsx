@@ -1,8 +1,11 @@
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from 'react-hot-toast';
+import { toast } from "react-hot-toast";
 
-import { createAuthUserWithEmailAndPassword, updateUserProfile } from "../../utils/firebase.utils";
+import {
+  createAuthUserWithEmailAndPassword,
+  updateUserProfile,
+} from "../../utils/firebase.utils";
 import AuthProviders from "../../components/auth-providers/auth-providers.component";
 import { useContext } from "react";
 import { UserContext } from "../../contexts/user.context";
@@ -21,7 +24,7 @@ const SignUp = () => {
   const handleUpdateProfile = (profile) => {
     updateUserProfile(profile)
       .then(() => {
-        navigate('/verify-email')
+        navigate("/verify-email");
       })
       .catch((error) => console.error(error));
   };
@@ -35,13 +38,13 @@ const SignUp = () => {
     setLoading(true);
 
     createAuthUserWithEmailAndPassword(email, password)
-    .then(result => {
-      handleUpdateProfile({ displayName, photoURL });
-      toast.success("Please verify your email address before continuing.");
-    })
-    .catch(error => {
-      console.error(error);
-    })
+      .then((result) => {
+        handleUpdateProfile({ displayName, photoURL })
+        toast.success("Please verify your email address before continuing.");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   return (
@@ -80,7 +83,7 @@ const SignUp = () => {
             placeholder="Your photo url"
             className="input input-bordered w-full max-w-md h-9 rounded-sm"
             {...register("photoURL", {
-              required: false
+              required: false,
             })}
           />
           <label className="label">
@@ -140,7 +143,7 @@ const SignUp = () => {
       </p>
       <div className="mt-7">
         <h6 className="text-center">You can also sign up with</h6>
-      <AuthProviders />
+        <AuthProviders />
       </div>
     </div>
   );

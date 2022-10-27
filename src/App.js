@@ -22,7 +22,6 @@ function App() {
     const unsubscribe = onAuthStateChangedListener((user) => {
       setLoading(false);
       setUser(user);
-      // console.log(user);
     })
 
     return unsubscribe;
