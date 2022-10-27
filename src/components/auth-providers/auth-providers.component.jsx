@@ -1,27 +1,56 @@
 import React, { useContext } from "react";
-import { signInWithGooglePopup } from "../../utils/firebase.utils";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import toast from "react-hot-toast";
+
 import { UserContext } from "../../contexts/user.context";
+import {
+  signInWithGooglePopup,
+  signInWithGithubPopup,
+} from "../../utils/firebase.utils";
 
 const AuthProviders = () => {
   const { setLoading } = useContext(UserContext);
 
   const googleSignIn = () => {
     setLoading(true);
-    signInWithGooglePopup();
-  }
-  
+    signInWithGooglePopup()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.code);
+      });
+  };
+
+  const githubSignIn = () => {
+    setLoading(true);
+    signInWithGithubPopup()
+      .then(() => {})
+      .catch((error) => {
+        console.error(error);
+        toast.error(error.code);
+      });
+  };
+
   return (
     <div className="flex flex-col w-full lg:flex-row mt-5">
       <div
-        className="grid flex-grow card bg-base-300 place-items-center cursor-pointer rounded-lg"
+        className="grid flex-grow card p-4 bg-base-300 place-items-center cursor-pointer rounded-lg"
         onClick={googleSignIn}
       >
-        <span className="flex items-center gap-2"><FaGoogle />Google</span>
+        <span className="flex items-center gap-2">
+          <FaGoogle />
+          Google
+        </span>
       </div>
       <div className="divider lg:divider-horizontal">OR</div>
-      <div className="grid flex-grow card bg-base-300 place-items-center cursor-pointer rounded-lg">
-        <span className="flex items-center gap-2"><FaGithub />Github</span>
+      <div
+        className="grid flex-grow card p-4 bg-base-300 place-items-center cursor-pointer rounded-lg"
+        onClick={githubSignIn}
+      >
+        <span className="flex items-center gap-2">
+          <FaGithub />
+          Github
+        </span>
       </div>
     </div>
   );

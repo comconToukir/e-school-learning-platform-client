@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
+  GithubAuthProvider,
   onAuthStateChanged,
   sendEmailVerification,
   signInWithEmailAndPassword,
@@ -16,12 +17,14 @@ import {
 import app from '../firebase.config';
 
 const googleProvider = new GoogleAuthProvider();
+const githubProvider = new GithubAuthProvider();
 
 export const auth = getAuth(app);
 
-export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider)
-  .then(result => { })
-  .catch(error => console.error(error))
+export const signInWithGooglePopup = () => signInWithPopup(auth, googleProvider);
+  
+
+export const signInWithGithubPopup = () => signInWithPopup(auth, githubProvider);
 
 export const createAuthUserWithEmailAndPassword = async (email, password) => {
   if (!email || !password) return;

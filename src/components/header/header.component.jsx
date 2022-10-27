@@ -25,7 +25,7 @@ const Header = () => {
               src={Logo}
               alt="e-school-logo"
             />
-            <span className="normal-case text-3xl font-semibold">E-SCHOOL</span>
+            <span className="normal-case text-xl lg:text-3xl font-semibold">E-SCHOOL</span>
           </Link>
         </div>
         <div className="flex-none gap-2">
@@ -33,7 +33,7 @@ const Header = () => {
             <input
               type="text"
               placeholder="Search"
-              className="input input-bordered h-9 rounded-sm"
+              className="input input-bordered h-9 rounded-sm w-40 md:w-56 lg:w-64"
             />
           </div>
           <label className="swap swap-rotate">

@@ -1,5 +1,6 @@
 const blogData = [
   {
+    id: `fdggf`,
     h2: `What is CORS?`,
     p: `Cross-origin resource sharing (CORS) is a browser security feature
   that restricts cross-origin HTTP requests that are initiated from
@@ -12,6 +13,7 @@ const blogData = [
   method and headers that will be used in the actual request.`,
   },
   {
+    id: `ghjgvb`,
     h2: `Why are you using firebase? What other options do you have to
   implement authentication?`,
     p: `Firebase Authentication provides backend services, easy-to-use SDKs,
@@ -24,6 +26,7 @@ const blogData = [
   backend.`,
   },
   {
+    id: `mghjhgj`,
     h2: `How does the private route work?`,
     p: `Private Routes in React Router (also called Protected Routes) require
   a user being authorized to visit a route (read: page). So if a user is
@@ -36,6 +39,7 @@ const blogData = [
   application.`,
   },
   {
+    id: `dgdfvbc`,
     h2: `What is Node? How does Node work?`,
     p: `As an asynchronous event-driven JavaScript runtime, Node.js is
   designed to build scalable network applications. This is in contrast
@@ -66,7 +70,7 @@ const Blog = () => {
   return (
     <div className="bg-base-200 mt-8 p-4 rounded-md shadow-sm flex flex-col w-full border-opacity-50">
       {blogData.map((data) => (
-        <>
+        <div key={data.id}>
           <div className="divider">Blog post</div>
           <div className="grid card bg-base-300 rounded-box place-items-center p-5 my-4">
             <h2 className="bg-base-200 w-full text-center text-2xl font-semibold p-4 mb-5 rounded-md">
@@ -83,7 +87,7 @@ const Blog = () => {
               ) : null}
             </p>
           </div>
-        </>
+        </div>
       ))}
     </div>
   );
