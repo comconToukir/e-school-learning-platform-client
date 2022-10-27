@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import ReactToPdf from "react-to-pdf";
 import { PieChart } from "react-minimal-pie-chart";
 import { FaStar, FaPrint } from "react-icons/fa";
+import ReactImageMagnify from "react-image-magnify";
 
 import Spinner from "../spinner/spinner.component";
 import ErrorPage from "./../../pages/errorPage/errorPage.component";
@@ -40,7 +41,10 @@ const CourseDetail = () => {
         <h2 className="text-4xl font-semibold mb-7">{course_name}</h2>
         <ReactToPdf targetRef={ref} filename="div-blue.pdf">
           {({ toPdf }) => (
-            <button onClick={toPdf} className="btn py-1 mb-4 ml-auto text-xs rounded-md">
+            <button
+              onClick={toPdf}
+              className="btn py-1 mb-4 ml-auto text-xs rounded-md"
+            >
               <FaPrint className="mr-2" />
               Generate pdf
             </button>

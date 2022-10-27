@@ -13,7 +13,7 @@ import Checkout from './private-routes/checkout/checkout.component';
 import EmailNotVerified from './../pages/EmailNotVerified/EmailNotVerified';
 import ErrorPage from "../pages/errorPage/errorPage.component";
 import CourseDetail from './../components/course-detail/course-detail.component';
-import Profile from "../pages/profile/profile.component";
+import Profile from "./private-routes/checkout/checkout.component";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

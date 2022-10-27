@@ -6,8 +6,8 @@ import {
   updateUserEmail,
   updateUserProfile,
   updateUserPassword,
-} from "../../utils/firebase.utils";
-import { UserContext } from "../../contexts/user.context";
+} from "../../../utils/firebase.utils";
+import { UserContext } from "../../../contexts/user.context";
 
 const Profile = () => {
   const { user, setLoading } = useContext(UserContext);

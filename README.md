@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+# E-SCHOOL Learning Platform
+<hr />
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It as an online learning platform dedicated to educate people of this world. This website was created as an assignment to Programming Hero web development course.
 
-## Available Scripts
+## Project features
+> ### Courses
 
-In the project directory, you can run:
+- In the courses page you can select categories to see relevant courses.
+- From the course cards you can view the details or directly go to checkout.
+- In course details you can see the course price, rating, description, student feedback etc.
+- If you click the generate pdf button a pdf will automatically be created and downloaded in your browser.
+- to get premium access for the course you will have to be logged in and your email must be verified.
 
+> ### Blog
+- In the blog page there are some web development related questions and their answers.
+
+> ### FAQ
+- The FAQ page consists some general questions about the websites and its functionality.
+
+> ### Login and Sign Up page
+- You can sign in with a valid email and password.
+- You can also sign in using either google or github account.
+- Your email account must be validated to perform certain actions in our website.
+- You can request for a password reset if you forgot your password.
+
+> ### Profile
+- In the profile page you can view your current profile picture, full name, email etc.
+- You can also update them alongside your password if you wish to.
+- To change your email and password you have to be recently logged in.
+
+> ### Header
+- There are links to various routes of the website
+- In the header section you can view your name and profile picture if you are logged in.
+- There is also an option to toggle between light and dark theme.
+
+> ### Others
+- There is an error page to redirect to if an error occurs.
+- There is also a loader spinner to indicate data loading.
+
+> ### Installed Packages
+- react (Base)
+- react-router-dom
+- react-query (Fetch and cache data)
+- axios (To make XMLHttpRequests from the browser)
+- firebase (As authentication provider)
+- tailwindcss (CSS framework)
+- daisyui (ui component library using tailwind)
+- postcss 
+- autoprefixer
+- react-awesome-slider (Home page carousel)
+- react-hook-form (For form validation and form state management)
+- react-hot-toast (notification toast)
+- react-icons
+- react-loader-spinner 
+- react-minimal-pie-chart
+- react-to-pdf (Generate pdf from react element and download)
+
+> #### Additional
+
+- Clone the project. Go to project directory.
+- In the project directory, you can run:
+### `yarn install`
 ### `yarn start`
 
-Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
