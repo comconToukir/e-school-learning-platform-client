@@ -1,7 +1,12 @@
 module.exports = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        workSans: ["Work Sans, sans-serif"],
+        karla: ["Karla, sans-serif"]
+      }
+    },
   },
   plugins: [require('daisyui')],
   daisyui: {

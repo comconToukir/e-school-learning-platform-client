@@ -49,7 +49,7 @@ const ResetPassword = () => {
             <p className="text-red-500">Please provide a valid email address</p>
           )}
         </div>
-        <input type="submit" className="btn btn-accent" aria-label="send password reset email" value="Send password reset email" />
+        <input type="submit" className="btn btn-accent capitalize" aria-label="send password reset email" value="Send password reset email" />
       </form>
     </div>
   );

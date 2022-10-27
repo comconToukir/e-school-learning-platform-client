@@ -34,7 +34,7 @@ const AuthProviders = () => {
   return (
     <div className="flex flex-col w-full lg:flex-row mt-5">
       <div
-        className="grid flex-grow card p-4 bg-base-300 place-items-center cursor-pointer rounded-lg"
+        className="grid flex-grow card p-4 btn-accent font-semibold place-items-center cursor-pointer rounded-lg"
         onClick={googleSignIn}
       >
         <span className="flex items-center gap-2">
@@ -44,7 +44,7 @@ const AuthProviders = () => {
       </div>
       <div className="divider lg:divider-horizontal">OR</div>
       <div
-        className="grid flex-grow card p-4 bg-base-300 place-items-center cursor-pointer rounded-lg"
+        className="grid flex-grow card p-4 btn-accent font-semibold place-items-center cursor-pointer rounded-lg"
         onClick={githubSignIn}
       >
         <span className="flex items-center gap-2">

@@ -29,7 +29,7 @@ function App() {
   }, [setUser, setLoading])
 
   return (
-    <div data-theme={theme}>
+    <div data-theme={theme} className="font-karla">
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
       </QueryClientProvider>

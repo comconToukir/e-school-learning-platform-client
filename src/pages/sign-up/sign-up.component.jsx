@@ -125,7 +125,7 @@ const SignUp = () => {
             </p>
           )}
           <input
-            className="bg-accent py-3 mt-7 rounded-md cursor-pointer"
+            className="btn-accent capitalize font-semibold py-3 mt-7 rounded-md cursor-pointer"
             type="submit"
             value="Sign up"
             aria-label="submit"

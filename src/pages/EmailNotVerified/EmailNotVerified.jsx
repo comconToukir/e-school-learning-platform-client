@@ -28,8 +28,8 @@ const EmailNotVerified = () => {
         Your email is not verified. Please verify your email address first
         before continuing.
       </p>
-      <button className="btn btn-accent mr-3" onClick={handleEmailVerification}>Send Verification email</button>
-      <button className="btn  btn-outline" onClick={() => navigate('/')}>Go to Home page</button>
+      <button className="btn btn-accent mr-3 capitalize" onClick={handleEmailVerification}>Send Verification email</button>
+      <button className="btn  btn-outline capitalize" onClick={() => navigate('/')}>Go to Home page</button>
     </div>
   );
 };

@@ -28,17 +28,18 @@ const CourseCard = ({
       </div>
       <div className="card-body p-4">
         <h2 className="card-title">{course_name}</h2>
-        <p className="text-sm">{description.slice(0, 90)}...</p>
-        <div className="flex justify-between mt-3">
+        <p className="text-sm font-light">{description.slice(0, 90)}...</p>
+        <div className="flex justify-end mt-3">
           <Link
             to={`/courses/${categoryId}/${id}`}
+            state={{ from: { categoryId, courseId: id }}}
             className="btn btn-primary w-70 rounded-md"
           >
             <button>View Details</button>
           </Link>
-          <Link to="/checkout" className="btn btn-primary w-10 px-0 rounded-md">
+          {/* <Link to={`/checkout/${id}`} className="btn btn-primary w-10 px-0 rounded-md">
             <FaCartPlus />
-          </Link>
+          </Link> */}
         </div>
       </div>
     </div>

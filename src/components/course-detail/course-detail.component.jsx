@@ -5,7 +5,6 @@ import { useQuery } from "react-query";
 import ReactToPdf from "react-to-pdf";
 import { PieChart } from "react-minimal-pie-chart";
 import { FaStar, FaPrint } from "react-icons/fa";
-import ReactImageMagnify from "react-image-magnify";
 
 import Spinner from "../spinner/spinner.component";
 import ErrorPage from "./../../pages/errorPage/errorPage.component";
@@ -27,12 +26,12 @@ const CourseDetail = () => {
 
   if (!data.data) return <ErrorPage />;
 
-  const { image_url, course_name, acceptance, price, description, reviews } =
+  const { id, image_url, course_name, acceptance, price, description, reviews } =
     data.data;
 
   const chartData = [
-    { title: "Happy students", value: acceptance, color: "#E38627" },
-    { title: "Others", value: 100 - acceptance, color: "#C13C37" },
+    { title: "Happy students", value: acceptance, color: "#65c3c8" },
+    { title: "Others", value: 100 - acceptance, color: "#eeaf3a" },
   ];
 
   return (
@@ -43,7 +42,7 @@ const CourseDetail = () => {
           {({ toPdf }) => (
             <button
               onClick={toPdf}
-              className="btn py-1 mb-4 ml-auto text-xs rounded-md"
+              className="btn btn-accent py-1 mb-4 ml-auto text-xs rounded-md capitalize"
             >
               <FaPrint className="mr-2" />
               Generate pdf
@@ -51,7 +50,7 @@ const CourseDetail = () => {
           )}
         </ReactToPdf>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 mb-5">
+      <div className="grid grid-cols-1 md:grid-cols-2 mb-6">
         <div>
           <img src={image_url} className="h-64 w-full object-cover" alt="" />
         </div>
@@ -79,10 +78,10 @@ const CourseDetail = () => {
           </div>
         </div>
       </div>
-      <p className="mb-7">{description}</p>
+      <p className="mb-7 font-light">{description}</p>
       <div className="text-end">
-        <Link to="/checkout">
-          <button className="btn btn-primary rounded-md">
+        <Link to={`/checkout/${id}`} state={{ from: { categoryId, courseId }}}>
+          <button className="btn btn-primary rounded-md capitalize">
             <FaStar className="mr-2" />
             Get premium access
           </button>

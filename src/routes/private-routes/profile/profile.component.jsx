@@ -67,7 +67,7 @@ const Profile = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-base-200 mt-8 mb-56 p-4  shadow-sm">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-base-200 mt-8 mb-12 p-4  shadow-sm">
       <div className="lg:max-w-lg bg-base-300 p-4 w-full rounded-md">
         <h1 className="text-4xl font-semibold mb-4">Profile Info</h1>
         <img
@@ -105,7 +105,7 @@ const Profile = () => {
               <p className="text-red-500">Alphabetical characters only</p>
             )}
             <input
-              className="bg-accent py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="btn-accent font-semibold py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update name"
               aria-label="submit"
@@ -126,7 +126,7 @@ const Profile = () => {
               required
             />
             <input
-              className="bg-accent py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="btn-accent font-semibold py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update photo url"
               aria-label="submit"
@@ -154,7 +154,7 @@ const Profile = () => {
               </p>
             )}
             <input
-              className="bg-accent py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="btn-accent font-semibold py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update email address"
               aria-label="submit"
@@ -185,7 +185,7 @@ const Profile = () => {
               </p>
             )}
             <input
-              className="bg-accent py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
+              className="btn-accent font-semibold py-1 mt-3 rounded-md cursor-pointer lg:max-w-md "
               type="submit"
               value="Update password"
               aria-label="submit"

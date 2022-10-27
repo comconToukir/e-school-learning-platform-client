@@ -71,7 +71,7 @@ const Login = () => {
             <p className="text-red-500">This field is required</p>
           )}
           <input
-            className="bg-accent py-3 mt-7 rounded-md cursor-pointer"
+            className="btn-accent capitalize font-semibold py-3 mt-7 rounded-md cursor-pointer"
             type="submit"
             value="Login"
             aria-label="submit"

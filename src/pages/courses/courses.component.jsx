@@ -40,7 +40,7 @@ const Courses = () => {
             </svg>
           </label>
         </div>
-        <div className="flex-1 px-2 mx-2">Select a course</div>
+        <div className="flex-1 px-2 mx-2 text-xl">Select a course</div>
       </div>
       <div className="drawer drawer-mobile h-auto">
         <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />

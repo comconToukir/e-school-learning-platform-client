@@ -23,7 +23,7 @@ const Header = () => {
     } else if (theme === "black") {
       setTheme("cupcake");
     }
-  }
+  };
 
   return (
     <nav className="bg-base-300 shadow-sm">
@@ -35,7 +35,9 @@ const Header = () => {
               src={Logo}
               alt="e-school-logo"
             />
-            <span className="normal-case text-xl lg:text-3xl font-semibold">E-SCHOOL</span>
+            <span className="normal-case text-xl lg:text-3xl font-semibold font-workSans">
+              E-SCHOOL
+            </span>
           </Link>
         </div>
         <div className="flex-none gap-2">
@@ -47,7 +49,11 @@ const Header = () => {
             />
           </div>
           <label className="swap swap-rotate">
-            <input type="checkbox" aria-label="toggle-theme" onChange={toggleTheme} />
+            <input
+              type="checkbox"
+              aria-label="toggle-theme"
+              onChange={toggleTheme}
+            />
 
             <svg
               className="swap-on fill-current w-8 h-8"
@@ -88,8 +94,17 @@ const Header = () => {
             </label>
             <ul
               tabIndex={0}
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-box w-52"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-300 rounded-md w-52"
             >
+              <li>
+                <NavLink
+                  to="/"
+                  end
+                  className={`${(isActive) => (isActive ? "active" : null)}`}
+                >
+                  Home
+                </NavLink>
+              </li>
               <li>
                 <NavLink
                   to="/courses"
@@ -119,6 +134,15 @@ const Header = () => {
         </div>
         <div className="navbar-start hidden lg:flex">
           <ul className="menu menu-horizontal p-0 gap-3">
+            <li>
+              <NavLink
+                to="/"
+                end
+                className={`${(isActive) => (isActive ? "active" : null)}`}
+              >
+                Home
+              </NavLink>
+            </li>
             <li>
               <NavLink
                 to="/courses"
@@ -153,32 +177,46 @@ const Header = () => {
                 className="btn btn-ghost btn-circle avatar tooltip tooltip-left hover:bg-transparent"
                 data-tip={user.displayName}
               >
-                <div className="w-10 rounded-full shadow-sm">
+                <div className="w-full rounded-full shadow-sm">
                   <img src={user.photoURL} alt="" />
                 </div>
               </label>
               <ul
                 tabIndex={0}
-                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-300 rounded-box w-52"
+                className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-300 rounded-md w-52"
               >
                 <li>
-                  <Link to="/profile">Profile</Link>
+                  <Link to="/profile" className="">
+                    Profile
+                  </Link>
                 </li>
                 <li>
-                  <span>Settings</span>
+                  <span className="">Settings</span>
                 </li>
                 <li>
-                  <span onClick={userLogOut}>Logout</span>
+                  <span onClick={userLogOut} className="">
+                    Logout
+                  </span>
                 </li>
               </ul>
             </div>
           ) : (
             <ul className="menu menu-horizontal p-0 gap-3">
               <li>
-                <NavLink to="/login">Login</NavLink>
+                <NavLink
+                  to="/login"
+                  className={`${(isActive) => (isActive ? "active" : null)}`}
+                >
+                  Login
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/sign-up">Sign up</NavLink>
+                <NavLink
+                  to="/sign-up"
+                  className={`${(isActive) => (isActive ? "active" : null)}`}
+                >
+                  Sign up
+                </NavLink>
               </li>
             </ul>
           )}
