@@ -100,7 +100,7 @@ const Login = () => {
       </p>
       <div className="mt-7">
         <h6 className="text-center">You can also log in with</h6>
-        <AuthProviders />
+        <AuthProviders from={from} categoryId={category} courseId={course} />
       </div>
     </div>
   );

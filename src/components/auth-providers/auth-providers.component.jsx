@@ -7,14 +7,18 @@ import {
   signInWithGooglePopup,
   signInWithGithubPopup,
 } from "../../utils/firebase.utils";
+import { useNavigate } from "react-router-dom";
 
-const AuthProviders = () => {
+const AuthProviders = ({ from, categoryId, courseId }) => {
   const { setLoading } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const googleSignIn = () => {
     setLoading(true);
     signInWithGooglePopup()
-      .then(() => {})
+      .then(() => {
+        navigate(from, { state: { categoryId, courseId } });
+      })
       .catch((error) => {
         console.error(error);
         toast.error(error.code);
@@ -24,7 +28,9 @@ const AuthProviders = () => {
   const githubSignIn = () => {
     setLoading(true);
     signInWithGithubPopup()
-      .then(() => {})
+      .then(() => {
+        navigate(from, { state: { categoryId, courseId } });
+      })
       .catch((error) => {
         console.error(error);
         toast.error(error.code);
