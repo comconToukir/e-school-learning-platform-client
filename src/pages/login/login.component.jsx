@@ -11,13 +11,19 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const { categoryId, courseId } = location.state.from.state;
+  let category, course;
+
+  if (location.state) {
+    const { categoryId, courseId } = location?.state?.from?.state;
+    category = categoryId;
+    course = courseId;
+  }
   const { setLoading } = useContext(UserContext);
 
-  console.log(categoryId, courseId);
+  // console.log(category, course);
 
   const from = location.state?.from?.pathname || "/";
-  console.log(from);
+  // console.log(from);
 
   const {
     register,
@@ -32,10 +38,10 @@ const Login = () => {
     setLoading(true);
     signInAuthUserWithEmailAndPassword(email, password)
       .then((result) => {
-        navigate(from, { state: { categoryId, courseId}});
+        navigate(from, { state: { categoryId: category, courseId: course } });
       })
       .catch((error) => {
-        toast.error(error.code)
+        toast.error(error.code);
         console.error(error);
       });
   };

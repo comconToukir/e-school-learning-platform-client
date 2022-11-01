@@ -43,6 +43,7 @@ const SignUp = () => {
         toast.success("Please verify your email address before continuing.");
       })
       .catch((error) => {
+        toast.error(error.code)
         console.error(error);
       });
   };

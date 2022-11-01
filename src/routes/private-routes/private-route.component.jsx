@@ -9,8 +9,6 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(UserContext);
   const location = useLocation();
 
-  console.log(location);
-
   const {
     state: { categoryId, courseId },
   } = location;
@@ -19,14 +17,14 @@ const PrivateRoute = ({ children }) => {
     return <Spinner />;
   }
 
-  if (user && !user.emailVerified) {
-    return (
-      <Navigate
-        to="/verify-email"
-        state={{ from: location, categoryId, courseId }}
-      />
-    );
-  }
+  // if (user && !user.emailVerified) {
+  //   return (
+  //     <Navigate
+  //       to="/verify-email"
+  //       state={{ from: location, categoryId, courseId }}
+  //     />
+  //   );
+  // }
 
   if (!user) {
     return (
