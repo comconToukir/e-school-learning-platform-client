@@ -9,9 +9,16 @@ const PrivateRoute = ({ children }) => {
   const { user, loading } = useContext(UserContext);
   const location = useLocation();
 
-  const {
-    state: { categoryId, courseId },
-  } = location;
+  let category, course;
+
+  if (location.state) {
+    const {
+      state: { categoryId, courseId },
+    } = location;
+
+    category = categoryId;
+    course = courseId;
+  }
 
   if (loading) {
     return <Spinner />;
@@ -28,7 +35,10 @@ const PrivateRoute = ({ children }) => {
 
   if (!user) {
     return (
-      <Navigate to="/login" state={{ from: location, categoryId, courseId }} />
+      <Navigate
+        to="/login"
+        state={{ from: location, categoryId: category, courseId: course }}
+      />
     );
   }
   return children;

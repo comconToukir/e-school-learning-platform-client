@@ -76,7 +76,7 @@ const Profile = () => {
           alt="profile"
         />
         <h3 className="mt-5">Name: {user.displayName}</h3>
-        <h3 className="mt-3">Photo URL: {user.photoURL}</h3>
+        <h3 className="mt-3 break-words">Photo URL: {user.photoURL}</h3>
         <h3 className="mt-3">Email: {user.email}</h3>
       </div>
 
