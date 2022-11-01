@@ -18,6 +18,7 @@ const Login = () => {
     category = categoryId;
     course = courseId;
   }
+
   const { setLoading } = useContext(UserContext);
 
   // console.log(category, course);
@@ -91,7 +92,7 @@ const Login = () => {
       </form>
       <p className="mt-5 flex items-end">
         Don't have an account?{" "}
-        <Link className="link ml-1" to="/sign-up">
+        <Link className="link ml-1" to="/sign-up" state={{ from, categoryId: category, courseId: course }}>
           register
         </Link>
         <Link to="/reset-password" className="link ml-auto text-sm">

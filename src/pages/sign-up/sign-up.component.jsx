@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 import {
@@ -14,6 +14,18 @@ const SignUp = () => {
   const navigate = useNavigate();
   const { setLoading } = useContext(UserContext);
 
+  const location = useLocation();
+
+  let category, course;
+
+  if (location.state) {
+    const { categoryId, courseId } = location?.state;
+    category = categoryId;
+    course = courseId;
+  }
+
+  const from = location.state?.from || "/";
+
   const {
     register,
     handleSubmit,
@@ -24,7 +36,7 @@ const SignUp = () => {
   const handleUpdateProfile = (profile) => {
     updateUserProfile(profile)
       .then(() => {
-        navigate("/verify-email");
+        navigate(from, { state: { categoryId: category, courseId: course } });
       })
       .catch((error) => console.error(error));
   };
@@ -39,11 +51,11 @@ const SignUp = () => {
 
     createAuthUserWithEmailAndPassword(email, password)
       .then((result) => {
-        handleUpdateProfile({ displayName, photoURL })
+        handleUpdateProfile({ displayName, photoURL });
         toast.success("Please verify your email address before continuing.");
       })
       .catch((error) => {
-        toast.error(error.code)
+        toast.error(error.code);
         console.error(error);
       });
   };
@@ -138,7 +150,10 @@ const SignUp = () => {
       </form>
       <p className="text-center mt-3">
         Already have an account?{" "}
-        <Link className="link" to="/login">
+        <Link
+          className="link"
+          to="/login"
+        >
           Login
         </Link>
       </p>

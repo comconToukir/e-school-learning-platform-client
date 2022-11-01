@@ -6,7 +6,7 @@ const Home = () => {
     <div className="mt-8 bg-base-200 rounded-md p-4">
       <Slider />
 
-      <div className="hero h-96 bg-base-200 mt-28">
+      <div className="hero h-96 bg-base-200 mt-32">
         <div className="hero-content text-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold">Welcome to E-School</h1>
@@ -18,8 +18,8 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="stats w-4/5 grid mx-auto shadow-sm my-28">
-        <div className="stat">
+      <div className="stats w-4/5 flex flex-col lg:flex-row mx-auto shadow-sm my-32">
+        <div className="stat py-10 px-8">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@ const Home = () => {
           <div className="stat-desc">Jan 1st - Feb 1st</div>
         </div>
 
-        <div className="stat">
+        <div className="stat border-none py-10 px-8">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +61,7 @@ const Home = () => {
           <div className="stat-desc">↗︎ 400 (22%)</div>
         </div>
 
-        <div className="stat">
+        <div className="stat border-none py-10 px-8">
           <div className="stat-figure text-secondary">
             <svg
               xmlns="http://www.w3.org/2000/svg"
