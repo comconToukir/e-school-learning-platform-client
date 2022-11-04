@@ -16,6 +16,8 @@ const PrivateRoute = ({ children }) => {
       state: { categoryId, courseId },
     } = location;
 
+    // console.log(location)
+
     category = categoryId;
     course = courseId;
   }
@@ -38,6 +40,7 @@ const PrivateRoute = ({ children }) => {
       <Navigate
         to="/login"
         state={{ from: location, categoryId: category, courseId: course }}
+        replace
       />
     );
   }

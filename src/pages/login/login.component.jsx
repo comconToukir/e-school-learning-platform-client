@@ -11,10 +11,12 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
+  console.log(location)
+
   let category, course;
 
   if (location.state) {
-    const { categoryId, courseId } = location?.state?.from?.state;
+    const { categoryId, courseId } = location?.state;
     category = categoryId;
     course = courseId;
   }

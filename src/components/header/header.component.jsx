@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
+import { FaUserAlt } from 'react-icons/fa';
 
 import { UserContext } from "../../contexts/user.context";
 import { ThemeContext } from "../../contexts/theme.context";
@@ -175,14 +176,20 @@ const Header = () => {
         </div>
         <div className="navbar-end">
           {user ? (
-            <div className="dropdown dropdown-end">
+            <div className="dropdown dropdown-end h-10 w-10">
               <label
                 tabIndex={0}
                 className="btn btn-ghost btn-circle avatar tooltip tooltip-left hover:bg-transparent"
                 data-tip={user.displayName}
               >
-                <div className="w-full rounded-full shadow-sm">
-                  <img src={user.photoURL} alt="" />
+                <div className="rounded-full shadow-sm h-10 w-10">
+                  {
+                    user.photoURL ? 
+                    <img src={user.photoURL} className="object-cover h-10 w-10" alt="" /> :
+                    <div className="grid place-items-center h-full">
+                      <FaUserAlt className="h-5 w-5" />
+                    </div>
+                  }
                 </div>
               </label>
               <ul
