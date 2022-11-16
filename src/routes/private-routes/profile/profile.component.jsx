@@ -68,7 +68,7 @@ const Profile = () => {
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-3 bg-base-200 mt-8 mb-12 p-4  shadow-sm">
-      <div className="lg:max-w-lg bg-base-300 p-4 w-full rounded-md">
+      <div className="lg:max-w-lg bg-base-300 p-4 w-full rounded-md break-words">
         <h1 className="text-4xl font-semibold mb-4">Profile Info</h1>
         <img
           src={user.photoURL}
@@ -76,7 +76,7 @@ const Profile = () => {
           alt="profile"
         />
         <h3 className="mt-5">Name: {user.displayName}</h3>
-        <h3 className="mt-3 break-words">Photo URL: {user.photoURL}</h3>
+        <h3 className="mt-3 ">Photo URL: {user.photoURL}</h3>
         <h3 className="mt-3">Email: {user.email}</h3>
       </div>
 

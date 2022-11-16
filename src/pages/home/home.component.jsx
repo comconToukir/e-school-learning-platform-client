@@ -6,7 +6,7 @@ const Home = () => {
     <div className="mt-8 bg-base-200 rounded-md p-4">
       <Slider />
 
-      <div className="hero h-96 bg-base-200 mt-32">
+      <div className="hero h-96 bg-base-200 mt-28">
         <div className="hero-content text-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold">Welcome to E-School</h1>

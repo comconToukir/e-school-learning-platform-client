@@ -14,17 +14,14 @@ const Login = () => {
   let category, course;
 
   if (location.state) {
-    const { categoryId, courseId } = location?.state?.from?.state;
+    const { categoryId, courseId } = location?.state;
     category = categoryId;
     course = courseId;
   }
 
   const { setLoading } = useContext(UserContext);
 
-  // console.log(category, course);
-
   const from = location.state?.from?.pathname || "/";
-  // console.log(from);
 
   const {
     register,
@@ -92,7 +89,11 @@ const Login = () => {
       </form>
       <p className="mt-5 flex items-end">
         Don't have an account?{" "}
-        <Link className="link ml-1" to="/sign-up" state={{ from, categoryId: category, courseId: course }}>
+        <Link
+          className="link ml-1"
+          to="/sign-up"
+          state={{ from, categoryId: category, courseId: course }}
+        >
           register
         </Link>
         <Link to="/reset-password" className="link ml-auto text-sm">
@@ -101,7 +102,7 @@ const Login = () => {
       </p>
       <div className="mt-7">
         <h6 className="text-center">You can also log in with</h6>
-        <AuthProviders from={from} categoryId={category} courseId={course} />
+        <AuthProviders />
       </div>
     </div>
   );

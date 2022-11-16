@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import { UserContext } from "../../contexts/user.context";
 import { ThemeContext } from "../../contexts/theme.context";
@@ -12,13 +12,9 @@ const Header = () => {
   const { user, setLoading } = useContext(UserContext);
   const { theme, setTheme } = useContext(ThemeContext);
 
-  const navigate = useNavigate();
-
   const userLogOut = () => {
     setLoading(true);
-    signOutUser().then(() => {
-      navigate("/");
-    });
+    signOutUser();
   };
 
   const toggleTheme = () => {

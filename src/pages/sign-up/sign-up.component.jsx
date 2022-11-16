@@ -1,5 +1,5 @@
 import { useForm } from "react-hook-form";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 import {
@@ -51,11 +51,10 @@ const SignUp = () => {
 
     createAuthUserWithEmailAndPassword(email, password)
       .then((result) => {
-        handleUpdateProfile({ displayName, photoURL });
+        handleUpdateProfile({ displayName, photoURL })
         toast.success("Please verify your email address before continuing.");
       })
       .catch((error) => {
-        toast.error(error.code);
         console.error(error);
       });
   };
@@ -150,10 +149,7 @@ const SignUp = () => {
       </form>
       <p className="text-center mt-3">
         Already have an account?{" "}
-        <Link
-          className="link"
-          to="/login"
-        >
+        <Link className="link" to="/login">
           Login
         </Link>
       </p>

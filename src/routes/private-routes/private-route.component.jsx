@@ -19,26 +19,13 @@ const PrivateRoute = ({ children }) => {
     category = categoryId;
     course = courseId;
   }
-
   if (loading) {
     return <Spinner />;
   }
 
-  // if (user && !user.emailVerified) {
-  //   return (
-  //     <Navigate
-  //       to="/verify-email"
-  //       state={{ from: location, categoryId, courseId }}
-  //     />
-  //   );
-  // }
-
   if (!user) {
     return (
-      <Navigate
-        to="/login"
-        state={{ from: location, categoryId: category, courseId: course }}
-      />
+      <Navigate to="/login" state={{ from: location, category, course }} />
     );
   }
   return children;
