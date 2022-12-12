@@ -1,7 +1,7 @@
 # E-SCHOOL Learning Platform
 <hr />
 
-It as an online learning platform dedicated to educate people of this world. This website was created as an assignment to Programming Hero web development course.
+It as an online learning platform dedicated to educate people of this world.
 
 ## Project features
 > ### Courses
